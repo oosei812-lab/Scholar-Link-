@@ -1,78 +1,113 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>All Learners Hub | SHS, TVET & University Learning</title>
-<meta name="description" content="All Learners Hub - Free learning app for SHS, TVET and University students. Download courses, PDFs, videos and quizzes.">
+<title>SCHOLAR LINK | Free Online Textbooks</title>
+<meta name="description" content="SCHOLAR LINK provides free academic textbooks for Business, Engineering, Computer Science, SHS, TVET and University students.">
 
-<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-body {
-    margin:0;
-    font-family:'Poppins', sans-serif;
-    background:#f5f8ff;
-    color:#333;
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:#f4f6fb;
+color:#333;
+scroll-behavior:smooth;
 }
-header {
-    background:#0d47a1;
-    color:white;
-    padding:20px;
-    text-align:center;
+
+header{
+background:#0d47a1;
+color:white;
+padding:20px;
+text-align:center;
 }
-nav {
-    text-align:center;
-    background:#1565c0;
-    padding:10px;
+
+nav{
+background:#1565c0;
+padding:10px;
+text-align:center;
 }
-nav a {
-    color:white;
-    margin:0 15px;
-    text-decoration:none;
-    font-weight:500;
+
+nav a{
+color:white;
+margin:0 12px;
+text-decoration:none;
+font-weight:500;
 }
-section {
-    padding:40px 20px;
-    max-width:1000px;
-    margin:auto;
+
+.hero{
+padding:50px 20px;
+text-align:center;
+background:#e3f2fd;
 }
-h2 {
-    color:#0d47a1;
+
+.btn{
+background:#ff6f00;
+color:white;
+padding:10px 18px;
+border-radius:6px;
+text-decoration:none;
+display:inline-block;
+margin:5px 5px;
+cursor:pointer;
 }
-.btn {
-    display:inline-block;
-    padding:12px 25px;
-    background:#0d47a1;
-    color:white;
-    border-radius:5px;
-    text-decoration:none;
-    margin-top:15px;
+
+section{
+max-width:1100px;
+margin:auto;
+padding:40px 20px;
 }
-.features {
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+
+.search-box{
+text-align:center;
+margin-bottom:20px;
 }
-.card {
-    background:white;
-    padding:20px;
-    border-radius:8px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+
+.search-box input{
+padding:10px;
+width:60%;
+max-width:400px;
+border-radius:5px;
+border:1px solid #ccc;
 }
-footer {
-    background:#0d47a1;
-    color:white;
-    text-align:center;
-    padding:20px;
-    margin-top:40px;
+
+.filter-buttons{
+text-align:center;
+margin-bottom:20px;
 }
-.ad-space {
-    margin:30px 0;
-    text-align:center;
-    background:#e3f2fd;
-    padding:20px;
+
+.filter-buttons button{
+margin:5px;
+padding:8px 15px;
+border:none;
+border-radius:5px;
+background:#0d47a1;
+color:white;
+cursor:pointer;
+}
+
+.book{
+background:white;
+padding:20px;
+margin:15px 0;
+border-radius:8px;
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+.ad-space{
+background:#e3f2fd;
+padding:25px;
+text-align:center;
+margin:40px 0;
+}
+
+footer{
+background:#0d47a1;
+color:white;
+text-align:center;
+padding:20px;
 }
 </style>
 </head>
@@ -80,67 +115,114 @@ footer {
 <body>
 
 <header>
-<h1>All Learners Hub</h1>
-<p>Empowering SHS, TVET & University Students</p>
-<a class="btn" href="https://www.appcreator24.com/app3903049-nrmeig">Download App</a>
+<h1>SCHOLAR LINK</h1>
+<p>Free Books (Online) | SHS • TVET • University</p>
 </header>
 
 <nav>
-<a href="#about">About</a>
-<a href="#courses">Courses</a>
-<a href="#download">Download</a>
+<a href="#books">Books</a>
+<a href="#download">App</a>
 <a href="#contact">Contact</a>
-<a href="#privacy">Privacy Policy</a>
+<a href="#privacy">Privacy</a>
 </nav>
 
-<section id="about">
-<h2>About Us</h2>
-<p>All Learners Hub is an educational mobile app designed to support SHS, TVET and University students with structured notes, video lessons, quizzes and downloadable PDFs.</p>
-</section>
+<div class="hero">
+<h2>Access Free Academic Textbooks</h2>
+<a class="btn" href="#books">Browse Books</a>
+</div>
 
-<section id="courses">
-<h2>Courses Offered</h2>
-<div class="features">
-<div class="card">
-<h3>SHS Courses</h3>
-<p>Core Mathematics, English, Science, Social Studies and Electives.</p>
+<section id="books">
+
+<h2>Book Library</h2>
+
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="Search books..." onkeyup="searchBooks()">
 </div>
-<div class="card">
-<h3>TVET & Engineering</h3>
-<p>ICT, Electricals, Building Construction & Engineering fundamentals.</p>
+
+<div class="filter-buttons">
+<button onclick="filterBooks('all')">All</button>
+<button onclick="filterBooks('business')">Business</button>
+<button onclick="filterBooks('science')">Science</button>
+<button onclick="filterBooks('math')">Mathematics</button>
+<button onclick="filterBooks('engineering')">Engineering</button>
 </div>
-<div class="card">
-<h3>University Level</h3>
-<p>Advanced subjects, MOOCs and professional skill development.</p>
+
+<div class="book" data-category="business">
+<h3>Introduction to Business</h3>
+<p>Modern business concepts and entrepreneurship.</p>
+<a class="btn" href="https://openstax.org/details/books/introduction-business" target="_blank">Read</a>
+<a class="btn" href="https://assets.openstax.org/oscms-prodcms/media/documents/IntroductionToBusiness-OP.pdf" target="_blank">PDF</a>
 </div>
+
+<div class="book" data-category="math">
+<h3>Calculus Volume 1</h3>
+<p>University-level mathematics textbook.</p>
+<a class="btn" href="https://openstax.org/details/books/calculus-volume-1" target="_blank">Read</a>
+<a class="btn" href="https://assets.openstax.org/oscms-prodcms/media/documents/CalculusVolume1-OP.pdf" target="_blank">PDF</a>
 </div>
+
+<div class="book" data-category="science">
+<h3>Biology 2e</h3>
+<p>Comprehensive biology textbook.</p>
+<a class="btn" href="https://openstax.org/details/books/biology-2e" target="_blank">Read</a>
+<a class="btn" href="https://assets.openstax.org/oscms-prodcms/media/documents/Biology2e-OP.pdf" target="_blank">PDF</a>
+</div>
+
+<div class="book" data-category="engineering">
+<h3>University Physics</h3>
+<p>Physics and engineering fundamentals.</p>
+<a class="btn" href="https://openstax.org/details/books/university-physics-volume-1" target="_blank">Read</a>
+<a class="btn" href="https://assets.openstax.org/oscms-prodcms/media/documents/UniversityPhysicsVolume1-OP.pdf" target="_blank">PDF</a>
+</div>
+
+<div class="ad-space">
+<!-- Replace below with AdSense code -->
+<p>Advertisement Space</p>
+</div>
+
 </section>
 
 <section id="download">
-<h2>Download the App</h2>
-<p>Get instant access to courses, PDFs, video lessons and quizzes.</p>
-<a class="btn" href="https://www.appcreator24.com/app3903049-nrmeig">Download Now</a>
-
-<div class="ad-space">
-<!-- Replace with your Google AdSense code -->
-<p>Ad Space (Insert Google AdSense Code Here)</p>
-</div>
-
+<h2>Download SCHOLAR LINK App</h2>
+<p>Offline SHS, TVET & University learning.</p>
+<a class="btn" href="https://www.appcreator24.com/app3903049-nrmeig">Download App</a>
 </section>
 
 <section id="contact">
-<h2>Contact Us</h2>
+<h2>Contact</h2>
 <p>Email: oosei812@gmail.com</p>
 </section>
 
 <section id="privacy">
 <h2>Privacy Policy</h2>
-<p>All Learners Hub respects user privacy. The app may display advertisements and collect minimal analytics data for performance improvement. We do not sell personal information. For inquiries, contact oosei812@gmail.com.</p>
+<p>SCHOLAR LINK may display advertisements and use analytics for service improvement. We do not sell personal data.</p>
 </section>
 
 <footer>
-<p>© 2026 All Learners Hub | scholarlink.com</p>
+<p>© 2026 SCHOLAR LINK | scholarlink.com</p>
 </footer>
 
+<script>
+function searchBooks() {
+let input = document.getElementById("searchInput").value.toLowerCase();
+let books = document.getElementsByClassName("book");
+for (let i = 0; i < books.length; i++) {
+let title = books[i].getElementsByTagName("h3")[0].innerText.toLowerCase();
+books[i].style.display = title.includes(input) ? "" : "none";
+}
+}
+
+function filterBooks(category) {
+let books = document.getElementsByClassName("book");
+for (let i = 0; i < books.length; i++) {
+if (category === "all" || books[i].dataset.category === category) {
+books[i].style.display = "";
+} else {
+books[i].style.display = "none";
+}
+}
+}
+</script>
+
 </body>
-</html>
+    </html>
