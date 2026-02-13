@@ -1,114 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SCHOLAR LINK | Free Online Textbooks</title>
-<meta name="description" content="SCHOLAR LINK provides free academic textbooks for Business, Engineering, Computer Science, SHS, TVET and University students.">
+<title>SCHOLAR LINK</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-body{
-margin:0;
-font-family:'Poppins',sans-serif;
-background:#f4f6fb;
-color:#333;
-scroll-behavior:smooth;
-}
-
-header{
-background:#0d47a1;
-color:white;
-padding:20px;
-text-align:center;
-}
-
-nav{
-background:#1565c0;
-padding:10px;
-text-align:center;
-}
-
-nav a{
-color:white;
-margin:0 12px;
-text-decoration:none;
-font-weight:500;
-}
-
-.hero{
-padding:50px 20px;
-text-align:center;
-background:#e3f2fd;
-}
-
-.btn{
-background:#ff6f00;
-color:white;
-padding:10px 18px;
-border-radius:6px;
-text-decoration:none;
-display:inline-block;
-margin:5px 5px;
-cursor:pointer;
-}
-
-section{
-max-width:1100px;
-margin:auto;
-padding:40px 20px;
-}
-
-.search-box{
-text-align:center;
-margin-bottom:20px;
-}
-
-.search-box input{
-padding:10px;
-width:60%;
-max-width:400px;
-border-radius:5px;
-border:1px solid #ccc;
-}
-
-.filter-buttons{
-text-align:center;
-margin-bottom:20px;
-}
-
-.filter-buttons button{
-margin:5px;
-padding:8px 15px;
-border:none;
-border-radius:5px;
-background:#0d47a1;
-color:white;
-cursor:pointer;
-}
-
-.book{
-background:white;
-padding:20px;
-margin:15px 0;
-border-radius:8px;
-box-shadow:0 4px 12px rgba(0,0,0,0.1);
-}
-
-.ad-space{
-background:#e3f2fd;
-padding:25px;
-text-align:center;
-margin:40px 0;
-}
-
-footer{
-background:#0d47a1;
-color:white;
-text-align:center;
-padding:20px;
-}
+body{font-family:Poppins;margin:0;background:#f4f6fb}
+header{background:#0d47a1;color:white;text-align:center;padding:20px}
+nav{text-align:center;background:#1565c0;padding:10px}
+nav button{margin:5px;padding:8px 15px;border:none;border-radius:5px;background:#ff6f00;color:white;cursor:pointer}
+section{max-width:1000px;margin:auto;padding:30px}
+input{padding:8px;margin:5px;border-radius:5px;border:1px solid #ccc}
+.book{background:white;padding:15px;margin:10px 0;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,0.1)}
+.btn{background:#ff6f00;color:white;padding:8px 15px;border-radius:5px;text-decoration:none;cursor:pointer}
+.hidden{display:none}
 </style>
 </head>
 
@@ -116,112 +24,110 @@ padding:20px;
 
 <header>
 <h1>SCHOLAR LINK</h1>
-<p>Free Books (Online) | SHS • TVET • University</p>
+<p>Free Books | SHS • TVET • University</p>
 </header>
 
 <nav>
-<a href="#books">Books</a>
-<a href="#download">App</a>
-<a href="#contact">Contact</a>
-<a href="#privacy">Privacy</a>
+<button onclick="register()">Register</button>
+<button onclick="login()">Login</button>
+<button onclick="logout()">Logout</button>
 </nav>
 
-<div class="hero">
-<h2>Access Free Academic Textbooks</h2>
-<a class="btn" href="#books">Browse Books</a>
-</div>
-
-<section id="books">
-
-<h2>Book Library</h2>
-
-<div class="search-box">
-<input type="text" id="searchInput" placeholder="Search books..." onkeyup="searchBooks()">
-</div>
-
-<div class="filter-buttons">
-<button onclick="filterBooks('all')">All</button>
-<button onclick="filterBooks('business')">Business</button>
-<button onclick="filterBooks('science')">Science</button>
-<button onclick="filterBooks('math')">Mathematics</button>
-<button onclick="filterBooks('engineering')">Engineering</button>
-</div>
-
-<div class="book" data-category="business">
-<h3>Introduction to Business</h3>
-<p>Modern business concepts and entrepreneurship.</p>
-<a class="btn" href="https://openstax.org/details/books/introduction-business" target="_blank">Read</a>
-<a class="btn" href="https://assets.openstax.org/oscms-prodcms/media/documents/IntroductionToBusiness-OP.pdf" target="_blank">PDF</a>
-</div>
-
-<div class="book" data-category="math">
-<h3>Calculus Volume 1</h3>
-<p>University-level mathematics textbook.</p>
-<a class="btn" href="https://openstax.org/details/books/calculus-volume-1" target="_blank">Read</a>
-<a class="btn" href="https://assets.openstax.org/oscms-prodcms/media/documents/CalculusVolume1-OP.pdf" target="_blank">PDF</a>
-</div>
-
-<div class="book" data-category="science">
-<h3>Biology 2e</h3>
-<p>Comprehensive biology textbook.</p>
-<a class="btn" href="https://openstax.org/details/books/biology-2e" target="_blank">Read</a>
-<a class="btn" href="https://assets.openstax.org/oscms-prodcms/media/documents/Biology2e-OP.pdf" target="_blank">PDF</a>
-</div>
-
-<div class="book" data-category="engineering">
-<h3>University Physics</h3>
-<p>Physics and engineering fundamentals.</p>
-<a class="btn" href="https://openstax.org/details/books/university-physics-volume-1" target="_blank">Read</a>
-<a class="btn" href="https://assets.openstax.org/oscms-prodcms/media/documents/UniversityPhysicsVolume1-OP.pdf" target="_blank">PDF</a>
-</div>
-
-<div class="ad-space">
-<!-- Replace below with AdSense code -->
-<p>Advertisement Space</p>
-</div>
-
+<section id="adminPanel" class="hidden">
+<h2>Admin Upload (Only You)</h2>
+<input id="title" placeholder="Book Title">
+<input id="category" placeholder="Category">
+<input id="link" placeholder="PDF Link">
+<button class="btn" onclick="addBook()">Upload Book</button>
 </section>
 
-<section id="download">
-<h2>Download SCHOLAR LINK App</h2>
-<p>Offline SHS, TVET & University learning.</p>
-<a class="btn" href="https://www.appcreator24.com/app3903049-nrmeig">Download App</a>
+<section>
+<h2>Search Books</h2>
+<input type="text" id="search" placeholder="Search..." onkeyup="searchBooks()">
+<div id="books"></div>
 </section>
 
-<section id="contact">
-<h2>Contact</h2>
-<p>Email: oosei812@gmail.com</p>
-</section>
+<script type="module">
 
-<section id="privacy">
-<h2>Privacy Policy</h2>
-<p>SCHOLAR LINK may display advertisements and use analytics for service improvement. We do not sell personal data.</p>
-</section>
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+import { getFirestore, collection, addDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-<footer>
-<p>© 2026 SCHOLAR LINK | scholarlink.com</p>
-</footer>
+const firebaseConfig = {
+  apiKey: "AIzaSyAyy5jBF7vKQBf7fL9wcjoX20_xEhnEMjw",
+  authDomain: "scholar-link-3125b.firebaseapp.com",
+  projectId: "scholar-link-3125b",
+  storageBucket: "scholar-link-3125b.firebasestorage.app",
+  messagingSenderId: "540927344053",
+  appId: "1:540927344053:web:dc555f4e462cf5e38eedfc",
+  measurementId: "G-CHV3DNSYEG"
+};
 
-<script>
-function searchBooks() {
-let input = document.getElementById("searchInput").value.toLowerCase();
-let books = document.getElementsByClassName("book");
-for (let i = 0; i < books.length; i++) {
-let title = books[i].getElementsByTagName("h3")[0].innerText.toLowerCase();
-books[i].style.display = title.includes(input) ? "" : "none";
+const app = initializeApp(firebaseConfig);
+getAnalytics(app);
+
+const auth = getAuth();
+const db = getFirestore();
+
+window.register = function(){
+let email=prompt("Email:");
+let pass=prompt("Password:");
+createUserWithEmailAndPassword(auth,email,pass)
+.catch(e=>alert(e.message));
+}
+
+window.login = function(){
+let email=prompt("Email:");
+let pass=prompt("Password:");
+signInWithEmailAndPassword(auth,email,pass)
+.catch(e=>alert(e.message));
+}
+
+window.logout = function(){
+signOut(auth);
+}
+
+onAuthStateChanged(auth,(user)=>{
+if(user && user.email==="oosei812@gmail.com"){
+document.getElementById("adminPanel").classList.remove("hidden");
+}else{
+document.getElementById("adminPanel").classList.add("hidden");
+}
+});
+
+window.addBook = async function(){
+let title=document.getElementById("title").value;
+let category=document.getElementById("category").value;
+let link=document.getElementById("link").value;
+await addDoc(collection(db,"books"),{title,category,link});
+alert("Book Added");
+}
+
+onSnapshot(collection(db,"books"),(snapshot)=>{
+let booksDiv=document.getElementById("books");
+booksDiv.innerHTML="";
+snapshot.forEach(doc=>{
+let book=doc.data();
+booksDiv.innerHTML+=`
+<div class="book">
+<h3>${book.title}</h3>
+<p>${book.category}</p>
+<a class="btn" href="${book.link}" target="_blank">Download</a>
+</div>
+`;
+});
+});
+
+window.searchBooks=function(){
+let input=document.getElementById("search").value.toLowerCase();
+let books=document.getElementsByClassName("book");
+for(let i=0;i<books.length;i++){
+let title=books[i].innerText.toLowerCase();
+books[i].style.display=title.includes(input)?"":"none";
 }
 }
 
-function filterBooks(category) {
-let books = document.getElementsByClassName("book");
-for (let i = 0; i < books.length; i++) {
-if (category === "all" || books[i].dataset.category === category) {
-books[i].style.display = "";
-} else {
-books[i].style.display = "none";
-}
-}
-}
 </script>
 
 </body>
